@@ -36,7 +36,7 @@ jobs:
         cd telegram-aws-chat-websocket
         yarn install
         yarn build
-        cp public/bundle.js ../../assets/js/telegram.js
+        cp public/bundle.js ../assets/js/telegram.js
         ls
         rm -rf telegram-aws-chat-websocket
 
