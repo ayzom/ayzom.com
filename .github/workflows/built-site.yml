@@ -1,0 +1,53 @@
+name: Build Site
+
+on: [workflow_dispatch]
+
+jobs:  
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clone current repostory
+      uses: actions/checkout@v2
+    # This part here is cloning a second repository
+    # While cloning the repository:
+    #   - it clones the repo into the given `path`
+    #   - it checks out the branch defined at `ref`
+
+    - name: Clone ayzom-nextjs repository with main branch
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.git_token }}
+        repository: akhileshyolo/ayzom-nextjs
+        path: ./ayzomv2
+        ref: main
+
+    - name: Run shell command
+      run: |
+        echo "Repository cloned!"
+        cd ayzomv2/ayzomv2
+        yarn install
+        yarn build
+        yarn export
+        zip -r out.zip ./out
+        mv out.zip ../../
+        cd ../../
+        ls
+        rm -rf ayzomv2
+    - name: setup git config
+      run: |
+        # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
+        git config user.name "GitHub Actions Bot"
+        git config user.email "<>"
+    - name: Extract some files
+      run: 7z x out.zip -o./ -r -spf
+
+    - name: Push Changes
+      run: |
+        cp -r out/* ./
+        rm -rf out.zip ./out
+        git status
+        git add .
+        git status
+        git commit -m "[$(date +'%Y-%m-%d')] Refresh file changes"
+        git push origin master
