@@ -29,8 +29,10 @@ jobs:
         yarn install
         yarn build
         yarn export
-        ls out
-        cp -r out/* ../../
+        zip -r out.zip ./out
+        mv out.zip ../../
+        cd ../../
+        ls
         rm -rf ayzomv2
         git add *
         git commit -m "save changes"
