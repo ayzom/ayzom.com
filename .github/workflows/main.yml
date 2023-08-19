@@ -29,6 +29,5 @@ jobs:
         yarn install
         yarn build
         yarn export
-        ls
-        ls dist
+        ls out
         
