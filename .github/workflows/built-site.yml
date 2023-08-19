@@ -18,7 +18,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         token: ${{ secrets.git_token }}
-        repository: https://github.com/akhileshyolo/telegram-aws-chat-websocket.git
+        repository: akhileshyolo/telegram-aws-chat-websocket
         path: ./telegram-aws-chat-websocket
         ref: master
 
