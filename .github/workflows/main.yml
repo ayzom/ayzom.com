@@ -14,10 +14,6 @@ jobs:
     #   - it clones the repo into the given `path`
     #   - it checks out the branch defined at `ref`
 
-    - name: Run shell command
-      run: |
-        echo ${{ secrets.REPO_TOKEN }}
-    
     - name: Clone ayzom-nextjs repository with main branch
       uses: actions/checkout@v2
       with:
@@ -29,4 +25,10 @@ jobs:
     - name: Run shell command
       run: |
         echo "Repository cloned!"
-        tree
+        cd ayzomv2/ayzomv2
+        yarn install
+        yarn build
+        yarn export
+        ls
+        ls dist
+        
