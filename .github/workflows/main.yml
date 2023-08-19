@@ -17,8 +17,8 @@ jobs:
     - name: Clone ayzom-nextjs repository with main branch
       uses: actions/checkout@v2
       with:
-        repository: arki7n/ayzom-nextjs
-        path: ayzomv2
+        repository: akhileshyolo/ayzom-nextjs
+        path: ./ayzomv2
         ref: main
 
     - name: Run shell command
