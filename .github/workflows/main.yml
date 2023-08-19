@@ -46,6 +46,8 @@ jobs:
 
     - name: Push Changes
       run: |
+        cp -r out/* ./
+        rm -rf out.zip ./out
         git status
         git add *
         #git commit -m "save changes"
