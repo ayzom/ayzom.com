@@ -34,8 +34,8 @@ jobs:
       run: |
         echo "Telegram Repository cloned!"
         cd telegram-aws-chat-websocket
-        npm install
-        npm run build
+        yarn install
+        yarn build
         cp public/bundle.js ../../assets/js/telegram.js
         ls
         rm -rf telegram-aws-chat-websocket
