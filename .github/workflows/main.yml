@@ -51,5 +51,5 @@ jobs:
         git status
         git add .
         git status
-        #git commit -m "save changes"
-        #git push origin master
+        git commit -m "[$(date +'%Y-%m-%d')] Refresh file changes"
+        git push origin master
