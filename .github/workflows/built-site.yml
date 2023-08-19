@@ -38,6 +38,7 @@ jobs:
         yarn build
         cp public/bundle.js ../assets/js/telegram.js
         ls
+        cd ../
         rm -rf telegram-aws-chat-websocket
 
     - name: Build nextjs Site
