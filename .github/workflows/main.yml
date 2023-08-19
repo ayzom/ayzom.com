@@ -41,10 +41,11 @@ jobs:
         git config user.name "GitHub Actions Bot"
         git config user.email "<>"
 
+    - name: Extract some files
+      run: 7z x out.zip
+
     - name: Push Changes
       run: |
-        apt-get install unzip
-        unzip out.zip -d ./
         git status
         git add *
         #git commit -m "save changes"
