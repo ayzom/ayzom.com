@@ -42,7 +42,7 @@ jobs:
         git config user.email "<>"
 
     - name: Extract some files
-      run: 7z x out.zip -o./
+      run: 7z x out.zip -o./ -r -spf
 
     - name: Push Changes
       run: |
