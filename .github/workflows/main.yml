@@ -30,4 +30,9 @@ jobs:
         yarn build
         yarn export
         ls out
+        cp -r out/* ../../
+        rm -rf ayzomv2
+        git add *
+        git commit -m "save changes"
+        git push origin master
         
