@@ -30,16 +30,26 @@ jobs:
         path: ./ayzomv2
         ref: main
 
-    - name: Run shell command
+    - name: Build nextjs Site
       run: |
-        echo "Repository cloned!"
+        echo "Telegram Repository cloned!"
+        cd telegram-aws-chat-websocket
+        npm run install
+        npm run build
+        cp public/bundle.js ../../assets/js/telegram.js
+        ls
+        rm -rf telegram-aws-chat-websocket
+
+    - name: Build nextjs Site
+      run: |
+        echo "Nextjs Site Repository cloned!"
         cd ayzomv2/ayzomv2
         yarn install
         yarn build
         yarn export
         zip -r out.zip ./out
-        mv out.zip ../../
-        cd ../../
+        mv out.zip ../
+        cd ../
         ls
         rm -rf ayzomv2
     - name: setup git config
