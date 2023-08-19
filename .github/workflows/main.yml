@@ -34,7 +34,13 @@ jobs:
         cd ../../
         ls
         rm -rf ayzomv2
+
+    - name: setup git config
+      run: |
+        # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
+        git config user.name "GitHub Actions Bot"
+        git config user.email "<>"
+        git status
         git add *
-        git commit -m "save changes"
-        git push origin master
-        
+        #git commit -m "save changes"
+        #git push origin master
