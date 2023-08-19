@@ -30,7 +30,7 @@ jobs:
         path: ./ayzomv2
         ref: main
 
-    - name: Build nextjs Site
+    - name: Build Telegram-bot
       run: |
         echo "Telegram Repository cloned!"
         cd telegram-aws-chat-websocket
