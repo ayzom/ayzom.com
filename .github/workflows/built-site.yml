@@ -48,8 +48,8 @@ jobs:
         yarn build
         yarn export
         zip -r out.zip ./out
-        mv out.zip ../
-        cd ../
+        mv out.zip ../../
+        cd ../../
         ls
         rm -rf ayzomv2
     - name: setup git config
