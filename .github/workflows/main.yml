@@ -21,7 +21,7 @@ jobs:
     - name: Clone ayzom-nextjs repository with main branch
       uses: actions/checkout@v2
       with:
-        token: ${{ secrets.REPO_TOKEN }}
+        token: ${{ secrets.git_token }}
         repository: akhileshyolo/ayzom-nextjs
         path: ./ayzomv2
         ref: main
