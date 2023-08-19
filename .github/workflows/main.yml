@@ -49,6 +49,7 @@ jobs:
         cp -r out/* ./
         rm -rf out.zip ./out
         git status
-        git add *
+        git add .
+        git status
         #git commit -m "save changes"
         #git push origin master
