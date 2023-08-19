@@ -14,6 +14,14 @@ jobs:
     #   - it clones the repo into the given `path`
     #   - it checks out the branch defined at `ref`
 
+    - name: Clone ayzom-nextjs repository with telegram-chat bot branch
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.git_token }}
+        repository: https://github.com/akhileshyolo/telegram-aws-chat-websocket.git
+        path: ./telegram-aws-chat-websocket
+        ref: master
+
     - name: Clone ayzom-nextjs repository with main branch
       uses: actions/checkout@v2
       with:
